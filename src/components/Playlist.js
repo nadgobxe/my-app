@@ -8,9 +8,7 @@ function Playlist() {
     return (
         <div>
             <h1>{playlistName}</h1>
-            <ul>
                 <TrackListing />
-            </ul>
         </div>
     );
 }

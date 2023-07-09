@@ -1,4 +1,5 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
+import styles from './css/TrackListing.module.css';
 
 const tracksData = [
     { id: "1", name: "Song 1", artist: "Artist 1", album: "Album 1" },
@@ -8,21 +9,23 @@ const tracksData = [
 
 function TrackListing() {
 
-const [tracks, setTracks] = useState(tracksData);
+    const [tracks, setTracks] = useState(tracksData);
 
-return (
-    <div>
-        {tracks.map((track) => {
-            return (
-              <li key={track.id}>
-                  <h3>{track.name}</h3>
-                  <h3>{track.artist}</h3>
-                  <h3>{track.album}</h3>
-              </li>
-            )
-        })}
-    </div>
-);
+    return (
+        <div className={styles.listing}>
+            <ul>
+            {tracks.map((track) => {
+                return (
+                    <li key={track.id}>
+                        <div className={styles.trackName}>{track.name}</div>
+                        <div className={styles.trackArtist}>{track.artist}</div>
+                        <div className={styles.trackAlbum}>{track.album}</div>
+                    </li>
+                )
+            })}
+            </ul>
+        </div>
+    );
 };
 
 export default TrackListing;
