@@ -1,0 +1,23 @@
+.track {
+    display: grid;
+    grid-template-areas: 
+      'full full'
+      'left right';
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    padding: 20px;
+    width: 30vw;
+  }
+
+  .full {
+    grid-area: full;
+  }
+  
+  .left {
+    grid-area: left;
+
+  }
+  
+  .right {
+    grid-area: right;
+  }

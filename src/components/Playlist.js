@@ -1,16 +1,14 @@
 import React, {useState} from "react";
-import TrackListing from "./TrackListing";
+import TrackList from "./TrackList";
 
-function Playlist() {
-    const mockP = '90s Goodies';
-    const [playlistName, setPlaylistName] = useState(mockP);
-
+function Playlist ({title, tracks}) {
     return (
         <div>
-            <h1>{playlistName}</h1>
-                <TrackListing />
+            <h2>{title}</h2>
+            <TrackList tracks={tracks} />
         </div>
-    );
+    )
+
 }
 
 export default Playlist;
