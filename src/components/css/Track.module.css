@@ -1,23 +1,42 @@
 .track {
-    display: grid;
-    grid-template-areas: 
-      'full full'
-      'left right';
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 20px;
-    padding: 20px;
-    width: 30vw;
-  }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 5px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f8f8f8;
+}
 
-  .full {
-    grid-area: full;
-  }
-  
-  .left {
-    grid-area: left;
+.full {
+  flex-grow: 1;
+  margin-right: 20px;
+  font-weight: 600;
+  color: #333;
+}
 
-  }
-  
-  .right {
-    grid-area: right;
-  }
+.left {
+  flex-grow: 1;
+  margin-right: 20px;
+  color: #666;
+}
+
+.right {
+  flex-grow: 1;
+  color: #666;
+}
+
+input[type="submit"] {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #4CAF50; /* Green background */
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
