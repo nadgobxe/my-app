@@ -15,15 +15,27 @@ function App() {
 
   const [title, setTitle] = useState('My Default Playlist');
 
+  const addSong = (song) => {
+    setPlayListSong(prevSongs => [song, ...prevSongs]);
+};
+
+const removeSong = (songToRemove) => {
+  setPlayListSong(prevSongs => prevSongs.filter(song => song.id !== songToRemove.id));
+};
+
+const editTitle = (newTitle) => {
+  setTitle(newTitle);
+}
+
   return (
     <div>
       <h1>My Jammming App</h1>
       <div className={styles.app}>
         <div className={styles['search-results']}>
-          <SearchResults tracks={searchResults} addedTracks={playListSong} />
+          <SearchResults tracks={searchResults} addedTracks={playListSong} addSong={addSong} removeSong={removeSong}/>
         </div>
         <div className={styles.playlist}>
-          <Playlist title={title} tracks={playListSong} />
+          <Playlist title={title} tracks={playListSong} removeSong={removeSong} editTitle={editTitle} />
         </div>
       </div>
     </div>

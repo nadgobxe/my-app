@@ -1,7 +1,7 @@
 import React from "react";
 import Track from "./Track";
 
-function SearchResults ({tracks, addedTracks}) {
+function SearchResults ({tracks, addedTracks, addSong, removeSong}) {
 
     const trueTrackList = true;
 
@@ -16,7 +16,7 @@ function SearchResults ({tracks, addedTracks}) {
                     console.log("Match result: ", match);
                     return match;
                 });
-                return <Track key={track.id} track={track} isAdded={isAdded} trueTrackList={trueTrackList}/>
+                return <Track key={track.id} track={track} isAdded={isAdded} trueTrackList={trueTrackList} addSong={addSong} removeSong={removeSong}/>
              })}
         </div>
     );
